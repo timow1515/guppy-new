@@ -1,0 +1,116 @@
+CREATE TABLE users(
+user_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+firstname varchar(60),
+lastname varchar(60),
+email varchar(80),
+address varchar(200),
+contact_number varchar(13),
+profile_picture varchar(255),
+password varchar(255)
+);
+
+CREATE TABLE events(
+event_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_id int(255),
+title varchar(255),
+banner varchar(255),
+description varchar(255),
+event_status int(2),
+date DATETIME,
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE event_category(
+category_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+event_id int(255),
+category_name varchar(255),
+max_participants int(100),
+payment_amount decimal(10,2),
+category_status int(2),
+FOREIGN KEY(event_id) REFERENCES events(event_id)
+);
+
+
+CREATE TABLE entries(
+entry_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+category_id int(255),
+user_id int(255),
+entry_code varchar(10),
+FOREIGN KEY(category_id) REFERENCES event_category(category_id),
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE entries_image(
+entryImg_ID int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+entry_id int(255),
+entry_image_file varchar(255),
+FOREIGN KEY(entry_id) REFERENCES entries(entry_id)
+);
+
+CREATE TABLE entries_video(
+entryVideo_ID int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+entry_id int(255),
+entry_video_file varchar(255),
+FOREIGN KEY(entry_id) REFERENCES entries(entry_id)
+);
+
+CREATE TABLE evaluation(
+evaluation_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+entry_id int(255),
+evaluation_badge int(10),
+FOREIGN KEY(entry_id) REFERENCES entries(entry_id)
+);
+
+CREATE TABLE payment(
+payment_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+entry_id int(255),
+user_id int(255),
+payment_amount decimal(10,2),
+payment_status int(2),
+FOREIGN KEY(entry_id) REFERENCES entries(entry_id),
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+
+CREATE TABLE participants(
+participant_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+category_id int(255),
+user_id int(255),
+FOREIGN KEY(category_id) REFERENCES event_category(category_id),
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE comments(
+comment_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+entry_id int(255),
+user_id int(255),
+comment_value varchar(255),
+FOREIGN KEY(entry_id) REFERENCES entries(entry_id),
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE likes(
+like_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_id int(255),
+entry_id int(255),
+FOREIGN KEY(entry_id) REFERENCES entries(entry_id),
+FOREIGN KEY(user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE labels(
+label_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+evaluation_id int(255),
+label_value varchar(255),
+FOREIGN KEY(evaluation_id) REFERENCES evaluation(evaluation_id)
+);
+
+CREATE TABLE notification(
+notification_id int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_id int(255),
+category_id int(255),
+notification_value varchar(255),
+is_read int(2),
+notif_datetime DATETIME,
+FOREIGN KEY(user_id) REFERENCES users(user_id),
+FOREIGN KEY(category_id) REFERENCES event_category(category_id)
+);

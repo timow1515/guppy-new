@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+.errors {
+  color: red;
+  font-size: 12px;
+}
+.swal2-icon .swal2-icon-content {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em !important;
+}
+
+.swal2-popup .swal2-styled {
+  margin: 0 5px 0 !important;
+}
+.swal2-html-container {
+  margin: 1em;
+  font-family: "Lato", "Font Awesome 5 Free";
+}
+.swal2-styled.swal2-confirm {
+  background-image: linear-gradient(195deg, #2d6ada 0%, #1e4fac 100%);
+}
+
+.swal2-styled.swal2-cancel {
+  background-color: rgb(153, 153, 153) !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.welcome {
+  background-image: url("../images/background.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.get {
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 15px 25px;
+  font-size: 40px;
+  border-radius: 10px;
+  color: white !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.get:hover {
+  background-color: rgb(153, 153, 153);
+}
+.profile-bord {
+  border-radius: 999px;
+}
+.scheduling {
+  color: white;
+  font-size: 90px;
+}
+.logo-text {
+  font-size: 16px !important;
+}
+.drop {
+  height: 30px !important;
+}
+.form-controls {
+  display: block !important;
+  width: 100% !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #212529 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #ced4da !important;
+  -webkit-appearance: none !important;
+  height: 2.5rem !important;
+  border-color: #e7e9ed !important;
+  color: #5d6778 !important;
+}
+
+.select2-selection {
+  border: 0 !important;
+  flex: 1 !important;
+  height: 100%;
+  width: 100%;
+}
+
+#preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.dragover {
+  background-color: #eee;
+}
+#image-container {
+  height: 400px;
+}
+.img-viewer {
+  height: 200px;
+  overflow: hidden;
+}
+.img-view {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.profile-view {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.wideos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.preview-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background-color: black;
+  height: 0;
+  padding-bottom: 56.25%; /* Aspect ratio of 16:9 (adjust as needed) */
+}
+.preview-containers {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 999999px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container-evaluate {
+  height: 40px;
+  width: 40px;
+  border-radius: 999px;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.img-badge {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.post-profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.container-recents {
+  height: 40px;
+  width: 40px;
+  border-radius: 999px;
+  padding: 1px;
+  overflow: hidden;
+  box-shadow: 28px 28px 56px #a8a8a8, -28px -28px 56px #ffffff;
+}
+
+@media (max-width: 573px) {
+  .sm-post {
+    display: none;
+  }
+  .caption-sm {
+    font-size: 11px;
+  }
+  .post-profile {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.profilepicture {
+  height: 300px;
+  width: 300px;
+}
+
+.comment-container {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.comment-containers {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.img-comments {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.badgerist {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.notification_stats {
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 4px;
+  padding: 2px 5px;
+}
+.unread {
+  background-color: lightgray !important;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#preview-container-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#slider-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#slider {
+  display: flex;
+  transition: left 0.5s;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid lightgray;
+}
+
+#prev-btn {
+  left: 10px;
+}
+
+#next-btn {
+  right: 10px;
+}
+
+.img-post-view {
+  height: 343px;
+  width: 100%;
+}
+.img-post-views {
+  height: 343px;
+  width: 100%;
+}
+.img-view-now {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.blured {
+  filter: blur(5px);
+}
+.count-display {
+  position: absolute;
+  left: 50%;
+  color: white;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transparent {
+  background: rgba(0, 0, 0, 0.5);
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: transparent;
+}
+.img-preview-modal {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.img-preview-modals {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.img-entr {
+  height: 40px;
+  width: 40px;
+  border-radius: 999px;
+}
+.img-badgesss {
+  height: 40px;
+  width: 30px;
+  border-radius: 999px;
+}
+
+.img-evaluate-cont {
+  height: 100%;
+}
+.img-evaluate {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
